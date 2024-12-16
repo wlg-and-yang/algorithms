@@ -43,7 +43,7 @@ def all_reduce(rank, size):
     # tensor = torch.ones(1)
     tensor = torch.randn(1, 2, 3)
     print('--------------Rank ', rank, ' src data ', tensor)
-    dist.all_reduce(tensor, op=dist.ReduceOp.PREMUL_SUM, group=group)
+    dist.all_reduce(tensor, op=dist.ReduceOp.SUM, group=group)
     print('++++++++++++++Rank ', rank, ' dst data ', tensor)
 
 
